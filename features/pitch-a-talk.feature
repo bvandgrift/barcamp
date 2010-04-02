@@ -10,7 +10,8 @@ Scenario: Sign up and log in
     | Password    | chonkyfire |
     | Password confirmation           | chonkyfire |
   And I press "Sign up"
-  Then show me the page
+  Then I should be on the home page
+  And I should see "You have signed up successfully."
 
 
 

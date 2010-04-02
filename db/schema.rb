@@ -9,15 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100402145630) do
+ActiveRecord::Schema.define(:version => 20100402153443) do
+
+  create_table "talks", :force => true do |t|
+    t.string   "title"
+    t.text     "abstract"
+    t.integer  "speaker_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :null => false
     t.string   "encrypted_password",   :limit => 40, :null => false
     t.string   "password_salt",                      :null => false
-    t.string   "confirmation_token",   :limit => 20
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
     t.string   "reset_password_token", :limit => 20
     t.string   "remember_token",       :limit => 20
     t.datetime "remember_created_at"
