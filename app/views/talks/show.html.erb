@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @talk.title %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%=h @talk.abstract %>
+</p>
+
+<p>
+  <b>Speaker:</b>
+  <%=h @talk.speaker_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_talk_path(@talk) %> |
+<%= link_to 'Back', talks_path %>
