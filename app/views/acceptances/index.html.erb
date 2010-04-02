@@ -1,0 +1,30 @@
+<h1>Listing talks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Abstract</th>
+    <th>Speaker</th>
+    <th>Accepted</th>
+    <th>Room</th>
+    <th>Start Time</th>
+    <th>End Time</th>    
+  </tr>
+
+<% form_for :acceptance, :url => barcamp_acceptances_path(@barcamp) do |form| %>
+  <% @talks.each do |talk| %>
+    <tr class="<%= dom_id(talk) %>">
+      <td><%=h talk.title %></td>
+      <td><%=h talk.abstract %></td>
+      <td><%=h talk.speaker.email %></td>
+      <td><%= check_box_tag "accepted[]", true, @barcamp.accepted_talks.include?(talk) %></td>
+      <td><%= select_tag "room_ids[]", options_for_select(@rooms) %></td>
+      <td><%= select_datetime %></td>
+      <td><%= select_datetime %></td>      
+    </tr>
+  <% end %>
+  </table>
+  <%= form.submit %>
+<% end %>
+
+<br />

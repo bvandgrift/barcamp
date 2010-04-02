@@ -16,7 +16,7 @@ module NavigationHelpers
       rooms_path
     when /the talk acceptance page/
       barcamp = Barcamp.active.first
-      barcamp_talks_path(barcamp)
+      barcamp_acceptances_path(barcamp)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

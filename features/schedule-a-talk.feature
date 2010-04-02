@@ -22,6 +22,8 @@ Background:
 Scenario: Successful acceptance
   Given I am signed up as "philipdodds@me.com"
   When I am on the talk acceptance page
+  Then I should see "Inside the BarCamp scheduling application"
+  And  I should see "Your iPad application"
   And  I check the box to accept the "Inside the BarCamp scheduling application" talk
   And  I check the box to accept the "Your iPad application" talk
   And  I press "Accept"
