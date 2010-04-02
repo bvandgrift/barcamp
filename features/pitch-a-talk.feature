@@ -6,7 +6,6 @@ Feature: Pitch a talk
 Background:
   Given an active BarCamp "BarCamp Charlotte III"
 
-@wip
 Scenario: Pitch a talk
   Given I am signed up as "jim@jimvanfleet.com"
   And   I am on the home page

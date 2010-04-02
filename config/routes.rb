@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :rooms
+
   map.resources :barcamps
 
   map.root :controller => :talks, :action => :index
