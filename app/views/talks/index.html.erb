@@ -12,13 +12,13 @@
     <td><%=h talk.title %></td>
     <td><%=h talk.abstract %></td>
     <td><%=h talk.speaker_id %></td>
-    <td><%= link_to 'Show', talk %></td>
-    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
-    <td><%= link_to 'Destroy', talk, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', barcamp_talk_path(talk.barcamp, talk) %></td>
+    <td><%= link_to 'Edit', edit_barcamp_talk_path(talk.barcamp, talk) %></td>
+    <td><%= link_to 'Destroy', barcamp_talk_path(talk.barcamp, talk), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Pitch a session', new_talk_path %>
+<%= link_to 'Pitch a session', new_barcamp_talk_path(Barcamp.active.first) %>

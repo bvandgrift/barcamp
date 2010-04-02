@@ -1,6 +1,6 @@
 <h1>New talk</h1>
 
-<% form_for(@talk) do |f| %>
+<% form_for(@talk, :url => barcamp_talks_path(@talk.barcamp)) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -20,4 +20,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', talks_path %>
+<%= link_to 'Back', barcamp_talks_path(@talk.barcamp) %>

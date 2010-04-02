@@ -15,8 +15,8 @@
 
 <div class="promo">
   Promote this talk with this URL:
-  <%= talk_url(@talk) %>
+  <%= barcamp_talk_url(@talk.barcamp, @talk) %>
 </div>
 
-<%= link_to 'Edit', edit_talk_path(@talk) %> |
-<%= link_to 'Back', talks_path %>
+<%= link_to 'Edit', edit_barcamp_talk_path(@talk.barcamp, @talk) %> |
+<%= link_to 'Back', barcamp_talks_path(@talk.barcamp) %>
