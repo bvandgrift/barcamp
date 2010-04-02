@@ -5,3 +5,4 @@ doc/app
 .bundle
 config/database.yml
 vendor/bundler_gems
+db/*.sqlite3
