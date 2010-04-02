@@ -1,4 +1,3 @@
-@wip
 Feature: Schedule a talk
   In order to ensure attendees can attend the talks of their choice from a published schedule
   As a BarCamp admin
@@ -25,10 +24,8 @@ Scenario: Successful acceptance
   Then I should see "Inside the BarCamp scheduling application"
   And  I should see "Your iPad application"
   And  I check the box to accept the "Inside the BarCamp scheduling application" talk
-  And  I check the box to accept the "Your iPad application" talk
   And  I press "Accept"
   Then the talk "Inside the BarCamp scheduling application" should be accepted for "BarCamp Charlotte III"
-  And the talk "Your iPad application" should be accepted for "BarCamp Charlotte III"
   And the talk "Your business and the iPhone" should not be accepted for "BarCamp Charlotte III"  
   
 

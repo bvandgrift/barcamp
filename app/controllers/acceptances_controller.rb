@@ -8,5 +8,9 @@ class AcceptancesController < ApplicationController
       @rooms = Room.all
     end
   end
+  
+  create do
+    wants.html { redirect_to barcamp_acceptances_path(@barcamp) }
+  end
 
 end

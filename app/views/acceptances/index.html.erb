@@ -11,20 +11,18 @@
     <th>End Time</th>    
   </tr>
 
-<% form_for :acceptance, :url => barcamp_acceptances_path(@barcamp) do |form| %>
   <% @talks.each do |talk| %>
+    <% form_for :acceptance, :url => barcamp_acceptances_path(@barcamp) do |f| %>
     <tr class="<%= dom_id(talk) %>">
-      <td><%=h talk.title %></td>
+      <td><%=h talk.title %> <%= hidden_field :acceptance, :talk_id, :value => talk.id %></td>
       <td><%=h talk.abstract %></td>
       <td><%=h talk.speaker.email %></td>
-      <td><%= check_box_tag "accepted[]", true, @barcamp.accepted_talks.include?(talk) %></td>
-      <td><%= select_tag "room_ids[]", options_for_select(@rooms) %></td>
-      <td><%= select_datetime %></td>
-      <td><%= select_datetime %></td>      
+      <td><%= check_box_tag "acceptance[accepted]", true, @barcamp.accepted_talks.include?(talk) %></td>
+      <td><%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name, :allow_blank => true) %></td>
+      <td><%= f.datetime_select :start_time %></td>
+      <td><%= f.datetime_select :end_time %></td>      
     </tr>
+    <%= f.submit "Accept"%>
+    <% end %>
   <% end %>
-  </table>
-  <%= form.submit %>
-<% end %>
-
-<br />
+</table>
