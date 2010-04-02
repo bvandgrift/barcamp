@@ -17,3 +17,5 @@ Scenario: Pitch a talk
   And   I press "Create"
   Then  I should see "Your pitch was created successfully."
   And   I should see the URL for the pitch "Future of Journalism"
+  And   "Future of Journalism" should be pitched for "BarCamp Charlotte III"
+  And   "Future of Journalism" should be pitched by "jim@jimvanfleet.com"

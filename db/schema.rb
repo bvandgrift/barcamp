@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(:version => 20100402154603) do
   create_table "talks", :force => true do |t|
     t.string   "title"
     t.text     "abstract"
-    t.integer  "speaker_id"
+    t.integer  "speaker_id", :null => false
+    t.integer  "barcamp_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

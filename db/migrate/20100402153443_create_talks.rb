@@ -3,7 +3,8 @@ class CreateTalks < ActiveRecord::Migration
     create_table :talks do |t|
       t.string :title
       t.text :abstract
-      t.integer :speaker_id
+      t.integer :speaker_id, :null => false
+      t.integer :barcamp_id, :null => false
 
       t.timestamps
     end
