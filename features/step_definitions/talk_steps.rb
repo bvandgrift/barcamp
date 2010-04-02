@@ -22,3 +22,18 @@ Given /^"([^\"]*)" has pitched "([^\"]*)"$/ do |email, pitch_title|
     Then  'I should see "Your pitch was created successfully."'
     Then  'I follow "logout"'
 end
+
+When /^I check the box to accept the "([^\"]*)" talk$/ do |talk_name|
+  talk = Talk.find_by_title(talk_name)
+  within("tr.#{dom_id(talk)}") do
+    check "accepted"
+  end
+end
+
+Then /^the talk "([^\"]*)" should be accepted for "([^\"]*)"$/ do |talk_name, camp_name|
+  Barcamp.find_by_name(camp_name).talks.accepted.should include(Talk.find_by_title(talk_name))
+end
+
+Then /^the talk "([^\"]*)" should not be accepted for "([^\"]*)"$/ do |talk_name, camp_name|
+  Barcamp.find_by_name(camp_name).talks.accepted.should_not include(Talk.find_by_title(talk_name))
+end

@@ -14,6 +14,9 @@ module NavigationHelpers
       new_user_registration_path
     when /the rooms page/
       rooms_path
+    when /the talk acceptance page/
+      barcamp = Barcamp.active.first
+      barcamp_talks_path(barcamp)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
