@@ -1,0 +1,7 @@
+log/*.log
+tmp/**/*
+doc/api
+doc/app
+.bundle
+config/database.yml
+vendor/bundler_gems
