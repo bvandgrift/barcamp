@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100402153443) do
+ActiveRecord::Schema.define(:version => 20100402154603) do
+
+  create_table "barcamps", :force => true do |t|
+    t.string   "title"
+    t.string   "location"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "url"
+    t.boolean  "active",     :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "talks", :force => true do |t|
     t.string   "title"

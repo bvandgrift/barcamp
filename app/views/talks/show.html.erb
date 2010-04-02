@@ -13,6 +13,10 @@
   <%=h @talk.speaker_id %>
 </p>
 
+<div class="promo">
+  Promote this talk with this URL:
+  <%= talk_url(@talk) %>
+</div>
 
 <%= link_to 'Edit', edit_talk_path(@talk) %> |
 <%= link_to 'Back', talks_path %>

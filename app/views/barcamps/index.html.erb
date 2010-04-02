@@ -1,0 +1,26 @@
+<h1>Listing barcamps</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Url</th>
+  </tr>
+
+<% @barcamps.each do |barcamp| %>
+  <tr>
+    <td><%=h barcamp.location %></td>
+    <td><%=h barcamp.start_time %></td>
+    <td><%=h barcamp.end_time %></td>
+    <td><%=h barcamp.url %></td>
+    <td><%= link_to 'Show', barcamp %></td>
+    <td><%= link_to 'Edit', edit_barcamp_path(barcamp) %></td>
+    <td><%= link_to 'Destroy', barcamp, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New barcamp', new_barcamp_path %>

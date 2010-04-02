@@ -1,0 +1,28 @@
+<h1>Editing barcamp</h1>
+
+<% form_for(@barcamp) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  </p>
+  <p>
+    <%= f.label :end_time %><br />
+    <%= f.datetime_select :end_time %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @barcamp %> |
+<%= link_to 'Back', barcamps_path %>
