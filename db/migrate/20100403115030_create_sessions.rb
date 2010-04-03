@@ -3,8 +3,8 @@ class CreateSessions < ActiveRecord::Migration
     create_table :sessions do |t|
       t.integer :barcamp_id, :null => false
       t.string :name, :null => false
-      t.time :start_time
-      t.time :end_time
+      t.datetime :start_time, :null => false
+      t.datetime :end_time, :null => false
 
       t.timestamps
     end

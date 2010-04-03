@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20100403115030) do
   create_table "sessions", :force => true do |t|
     t.integer  "barcamp_id", :null => false
     t.string   "name",       :null => false
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time", :null => false
+    t.datetime "end_time",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
