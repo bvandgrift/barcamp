@@ -1,4 +1,3 @@
-@wip
 Feature: Add a room
   In order to ensure that I can schedule speakers
   As a BarCamp admin
@@ -14,7 +13,3 @@ Scenario: Add a room
   And   I fill in "Name" with "Rabbit Hole"
   And   I press "Create"
   Then  there should be a room named "Rabbit Hole" for "BarCamp Charlotte III"
-  
-  
-  
-
