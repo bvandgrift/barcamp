@@ -5,4 +5,5 @@ class Barcamp < ActiveRecord::Base
   has_many :accepted_talks, :through => :acceptances, :source => :talk
   has_many :talks
   has_many :rooms
+  has_many :sessions
 end

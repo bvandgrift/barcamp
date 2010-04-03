@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @session.name %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @session.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @session.end_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>
