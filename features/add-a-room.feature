@@ -13,7 +13,7 @@ Scenario: Add a room
   And   I follow "Add a room"
   And   I fill in "Name" with "Rabbit Hole"
   And   I press "Create"
-  Then  there should be a room named "Rabbit Hole"
+  Then  there should be a room named "Rabbit Hole" for "BarCamp Charlotte III"
   
   
   
