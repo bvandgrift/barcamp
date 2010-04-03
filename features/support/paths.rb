@@ -13,7 +13,8 @@ module NavigationHelpers
     when /the signup page/
       new_user_registration_path
     when /the rooms page/
-      rooms_path
+      barcamp = Barcamp.active.first
+      barcamp_rooms_path(barcamp)
     when /the talk acceptance page/
       barcamp = Barcamp.active.first
       barcamp_acceptances_path(barcamp)

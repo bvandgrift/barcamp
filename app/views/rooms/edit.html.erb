@@ -1,6 +1,6 @@
 <h1>Editing room</h1>
 
-<% form_for(@room) do |f| %>
+<% form_for(@room, :url => barcamp_room_path(@room.barcamp, @room)) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -12,5 +12,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @room %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to 'Show', barcamp_room_path(@room.barcamp, @room) %> |
+<%= link_to 'Back', barcamp_rooms_path(@room.barcamp) %>

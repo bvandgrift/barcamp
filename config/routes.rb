@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :rooms
 
   map.resources :barcamps do |barcamp|
+    barcamp.resources :rooms
+    barcamp.resources :sessions
     barcamp.resources :talks
     barcamp.resources :acceptances    
   end

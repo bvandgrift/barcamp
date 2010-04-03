@@ -1,3 +1,4 @@
+@wip
 Feature: Add a room
   In order to ensure that I can schedule speakers
   As a BarCamp admin
