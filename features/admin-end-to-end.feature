@@ -1,3 +1,4 @@
+@wip @allow-rescue
 Feature: Admin end to end
   In order to ensure that participants can get from session to session with no hassle
   As a BarCamp admin

@@ -9,3 +9,17 @@ end
 Then /^"([^\"]*)" for "([^\"]*)" should end at "([^\"]*)"$/ do |session_name, barcamp_name, time_string|
   Barcamp.find_by_title(barcamp_name).sessions.find_by_name(session_name).end_time.should == Time.zone.parse(time_string)
 end
+
+Given /^the following sessions have been created for "([^\"]*)":$/ do |barcamp_name, table|
+  Given 'I am signed up as "jim2@jimvanfleet.com"'
+  table.hashes.each do |hash|
+    #    | session_name | start_time | end_time |
+    When  'I am on the sessions page'
+    And   'I follow "Add a session"'
+    And   "I fill in \"Name\" with #{hash['session_name'].inspect}"
+    And   "I select #{hash['start_time'].inspect} as the \"Start\" time"
+    And   "I select #{hash['end_time'].inspect} as the \"End\" time"
+    And   'I press "Create"'
+  end
+  And 'I follow "logout"'
+end

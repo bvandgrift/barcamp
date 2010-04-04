@@ -12,7 +12,6 @@ Scenario: Add a session
   Given I am signed up as "jim@jimvanfleet.com"
   When  I am on the sessions page
   And   I follow "Add a session"
-  Then  show me the page
   And   I fill in "Name" with "Session 1"
   And   I select "9:30" as the "Start" time
   And   I select "10:10" as the "End" time  
