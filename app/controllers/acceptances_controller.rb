@@ -17,5 +17,10 @@ class AcceptancesController < ApplicationController
     end 
     wants.html { redirect_to barcamp_acceptances_path(@barcamp) }
   end
-
+  
+  private
+  
+  def collection
+    @collection ||= end_of_association_chain.find(:all, :include => [:room, :period], :order => "rooms.name, periods.start_time")
+  end
 end

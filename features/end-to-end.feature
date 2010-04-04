@@ -37,7 +37,6 @@ Scenario: Talk scheduling success
   When I am on the talk acceptance page
   Then I should see "Inside the BarCamp scheduling application"
   And  I should see "Your business and the iPhone"
-  And  I check the box to accept the "Inside the BarCamp scheduling application" talk
   And  I press "Accept"
   Then I should be on the talk acceptance page
   Then the talk "Inside the BarCamp scheduling application" should be accepted for "BarCamp Charlotte III"
@@ -47,7 +46,6 @@ Scenario: Talk scheduling success
 Scenario: Undo talk scheduling
   Given I am signed up as "philipdodds@me.com"
   When I am on the talk acceptance page
-  And  I check the box to accept the "Inside the BarCamp scheduling application" talk
   And  I press "Accept"
   And  I follow "Undo"
   Then the talk "Inside the BarCamp scheduling application" should not be accepted for "BarCamp Charlotte III"  
@@ -55,8 +53,6 @@ Scenario: Undo talk scheduling
 Scenario: Prevent double-booking
   Given I am signed up as "philipdodds@me.com"
   When I am on the talk acceptance page
-  And  I check the box to accept the "Inside the BarCamp scheduling application" talk
   And  I press "Accept"
-  And  I check the box to accept the "Your business and the iPhone" talk
   And  I press "Accept"
   Then I should see "No double booking!"
