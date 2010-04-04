@@ -1,28 +1,46 @@
 <h1>Listing talks</h1>
 
+<%= flash[:error] if flash[:error] %>
+
 <table>
   <tr>
     <th>Title</th>
-    <th>Abstract</th>
     <th>Speaker</th>
-    <th>Accepted</th>
     <th>Room</th>
-    <th>Start Time</th>
-    <th>End Time</th>    
+    <th>Session</th>
+    <th>&nbsp;</th>    
   </tr>
 
   <% @talks.each do |talk| %>
     <% form_for :acceptance, :url => barcamp_acceptances_path(@barcamp) do |f| %>
     <tr class="<%= dom_id(talk) %>">
       <td><%=h talk.title %> <%= hidden_field :acceptance, :talk_id, :value => talk.id %></td>
-      <td><%=h talk.abstract %></td>
-      <td><%=h talk.speaker.email %></td>
-      <td><%= check_box_tag "acceptance[accepted]", true, @barcamp.accepted_talks.include?(talk) %></td>
-      <td><%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name, :allow_blank => true) %></td>
-      <td><%= f.datetime_select :start_time %></td>
-      <td><%= f.datetime_select :end_time %></td>      
+      <td><%=h talk.speaker_name %></td>
+      <td><%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name), :allow_blank => true %></td>
+      <td><%= f.select :period_id, options_from_collection_for_select(@periods, :id, :name), :allow_blank => true %></td>
+      <td><%= f.submit "Accept"%></td>
     </tr>
-    <%= f.submit "Accept"%>
     <% end %>
+  <% end %>
+</table>
+
+
+<h2>Accepted talks</h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Speaker</th>
+    <th>Room</th>
+    <th>Session</th>
+  </tr>
+
+  <% @acceptances.each do |a| %>
+    <tr class="<%= dom_id(a) %>">
+      <td><%=h a.talk.title %></td>
+      <td><%=h a.talk.speaker_name %></td>
+      <td><%=h a.room.name %></td>
+      <td><%=h a.period.name %></td>
+      <td><%= link_to 'Undo', barcamp_acceptance_path(@barcamp, a), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
   <% end %>
 </table>

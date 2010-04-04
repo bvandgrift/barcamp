@@ -4,12 +4,17 @@ class AcceptancesController < ApplicationController
   
   index do
     before do
-      @talks = parent_object.talks
-      @rooms = Room.all
+      @talks = parent_object.talks.find(:all, :include => :acceptance).select{ |t| t.acceptance.nil? }
+      @rooms = parent_object.rooms
+      @periods = parent_object.periods
     end
   end
   
   create do
+    failure.wants.html do
+      flash[:error] = object.errors.full_messages.to_sentence
+      redirect_to barcamp_acceptances_path(@barcamp)
+    end 
     wants.html { redirect_to barcamp_acceptances_path(@barcamp) }
   end
 

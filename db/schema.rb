@@ -12,11 +12,10 @@
 ActiveRecord::Schema.define(:version => 20100403115030) do
 
   create_table "acceptances", :force => true do |t|
-    t.integer  "talk_id"
-    t.integer  "room_id"
-    t.integer  "barcamp_id"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.integer  "talk_id",    :null => false
+    t.integer  "room_id",    :null => false
+    t.integer  "barcamp_id", :null => false
+    t.integer  "period_id",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20100403115030) do
 
   create_table "talks", :force => true do |t|
     t.string   "title"
-    t.integer  "speaker_name", :null => false
+    t.string   "speaker_name", :null => false
     t.string   "hashtag"
     t.integer  "barcamp_id",   :null => false
     t.datetime "created_at"

@@ -1,11 +1,10 @@
 class CreateAcceptances < ActiveRecord::Migration
   def self.up
     create_table :acceptances do |t|
-      t.integer :talk_id
-      t.integer :room_id
-      t.integer :barcamp_id
-      t.datetime :start_time
-      t.datetime :end_time
+      t.integer :talk_id, :null => false
+      t.integer :room_id, :null => false
+      t.integer :barcamp_id, :null => false
+      t.integer :period_id, :null => false
 
       t.timestamps
     end
