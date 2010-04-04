@@ -32,18 +32,18 @@ ActiveRecord::Schema.define(:version => 20100403115030) do
     t.datetime "updated_at"
   end
 
-  create_table "rooms", :force => true do |t|
-    t.string   "name",       :null => false
-    t.integer  "barcamp_id", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sessions", :force => true do |t|
+  create_table "periods", :force => true do |t|
     t.integer  "barcamp_id", :null => false
     t.string   "name",       :null => false
     t.datetime "start_time", :null => false
     t.datetime "end_time",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "barcamp_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -17,7 +17,7 @@ module NavigationHelpers
       barcamp_rooms_path(barcamp)
     when /the sessions page/
       barcamp = Barcamp.active.first
-      barcamp_sessions_path(barcamp)
+      barcamp_periods_path(barcamp)
     when /the talk acceptance page/
       barcamp = Barcamp.active.first
       barcamp_acceptances_path(barcamp)

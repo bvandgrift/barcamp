@@ -7,18 +7,18 @@
     <th>End time</th>
   </tr>
 
-<% @sessions.each do |session| %>
+<% @periods.each do |period| %>
   <tr>
-    <td><%=h session.name %></td>
-    <td><%=h session.start_time %></td>
-    <td><%=h session.end_time %></td>
-    <td><%= link_to 'Show', barcamp_session_path(@barcamp, session) %></td>
-    <td><%= link_to 'Edit', edit_barcamp_session_path(@barcamp, session) %></td>
-    <td><%= link_to 'Destroy', barcamp_session_path(@barcamp, session), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h period.name %></td>
+    <td><%=h period.start_time %></td>
+    <td><%=h period.end_time %></td>
+    <td><%= link_to 'Show', barcamp_period_path(@barcamp, period) %></td>
+    <td><%= link_to 'Edit', edit_barcamp_period_path(@barcamp, period) %></td>
+    <td><%= link_to 'Destroy', barcamp_period_path(@barcamp, period), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Add a session', new_barcamp_session_path(@barcamp) %>
+<%= link_to 'Add a session', new_barcamp_period_path(@barcamp) %>

@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class PeriodsController < ApplicationController
   resource_controller
   before_filter :authenticate_user!
   belongs_to :barcamp

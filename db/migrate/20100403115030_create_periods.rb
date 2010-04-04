@@ -1,6 +1,6 @@
-class CreateSessions < ActiveRecord::Migration
+class CreatePeriods < ActiveRecord::Migration
   def self.up
-    create_table :sessions do |t|
+    create_table :periods do |t|
       t.integer :barcamp_id, :null => false
       t.string :name, :null => false
       t.datetime :start_time, :null => false
@@ -11,6 +11,6 @@ class CreateSessions < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :sessions
+    drop_table :periods
   end
 end

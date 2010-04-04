@@ -1,18 +1,18 @@
 <p>
   <b>Name:</b>
-  <%=h @session.name %>
+  <%=h @period.name %>
 </p>
 
 <p>
   <b>Start time:</b>
-  <%=h @session.start_time %>
+  <%=h @period.start_time %>
 </p>
 
 <p>
   <b>End time:</b>
-  <%=h @session.end_time %>
+  <%=h @period.end_time %>
 </p>
 
 
-<%= link_to 'Edit', edit_barcamp_session_path(@barcamp, @session) %> |
-<%= link_to 'Back', barcamp_sessions_path(@barcamp) %>
+<%= link_to 'Edit', edit_barcamp_period_path(@barcamp, @period) %> |
+<%= link_to 'Back', barcamp_periods_path(@barcamp) %>
