@@ -18,6 +18,9 @@ module NavigationHelpers
     when /the sessions page/
       barcamp = Barcamp.active.first
       barcamp_periods_path(barcamp)
+    when /the talks page for "(.*)"/
+      barcamp = Barcamp.find_by_title($1)
+      barcamp_talks_path(barcamp)
     when /the talk acceptance page/
       barcamp = Barcamp.active.first
       barcamp_acceptances_path(barcamp)

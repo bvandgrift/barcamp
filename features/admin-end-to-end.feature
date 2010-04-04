@@ -1,4 +1,3 @@
-@wip @allow-rescue
 Feature: Admin end to end
   In order to ensure that participants can get from session to session with no hassle
   As a BarCamp admin
@@ -30,8 +29,10 @@ Feature: Admin end to end
   Scenario: Pitches on BarCamp morning
     Given I am signed up as "philipdodds@me.com"
     And   I am on the talks page for "BarCamp Charlotte III"
+    When  I follow "Add a new talk"
     When  I fill in "Title" with "Inside the BarCamp scheduling application"
-    And   I press "OK"
+    And   I fill in "Speaker name" with "@bigfleet"
+    And   I press "Add talk"
     Then  there should be a talk for "BarCamp Charlotte III" titled "Inside the BarCamp scheduling application"
     And   I should see "Inside the BarCamp scheduling application"
     And   I should be on the talks page for "BarCamp Charlotte III"

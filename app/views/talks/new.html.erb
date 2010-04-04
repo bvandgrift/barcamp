@@ -8,16 +8,15 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :abstract %><br />
-    <%= f.text_area :abstract %>
+    <%= f.label :speaker_name %><br />
+    <%= f.text_field :speaker_name %>
   </p>
   <p>
-    <%= f.label :speaker_id %><br />
-    <%= f.text_field :speaker_id %>
+    <%= f.label :hashtag %><br />
+    <%= f.text_field :hashtag %>
   </p>
+  
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Add talk' %>
   </p>
 <% end %>
-
-<%= link_to 'Back', barcamp_talks_path(@talk.barcamp) %>

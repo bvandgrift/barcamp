@@ -3,15 +3,15 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Abstract</th>
-    <th>Speaker</th>
+    <th>Speaker name</th>
+    <th>Hashtag</th>
   </tr>
 
 <% @talks.each do |talk| %>
   <tr>
     <td><%=h talk.title %></td>
-    <td><%=h talk.abstract %></td>
-    <td><%=h talk.speaker_id %></td>
+    <td><%=h talk.speaker_name %></td>
+    <td><%=h talk.hashtag %></td>
     <td><%= link_to 'Show', barcamp_talk_path(talk.barcamp, talk) %></td>
     <td><%= link_to 'Edit', edit_barcamp_talk_path(talk.barcamp, talk) %></td>
     <td><%= link_to 'Destroy', barcamp_talk_path(talk.barcamp, talk), :confirm => 'Are you sure?', :method => :delete %></td>
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'Pitch a session', new_barcamp_talk_path(Barcamp.active.first) %>
+<%= link_to "Add a new talk", new_barcamp_talk_path(@barcamp) %>

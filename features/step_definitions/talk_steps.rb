@@ -3,24 +3,8 @@ Then /^I should see the URL for the pitch "([^\"]*)"$/ do |talk_title|
   Then "I should see #{barcamp_talk_url(talk.barcamp, talk).inspect}"
 end
 
-Then /^"([^\"]*)" should be pitched for "([^\"]*)"$/ do |talk_title, camp_title|
+Then /^there should be a talk for "([^\"]*)" titled "([^\"]*)"$/ do |camp_title, talk_title|
   Talk.find_by_title(talk_title).barcamp.should == Barcamp.find_by_title(camp_title)
-end
-
-Then /^"([^\"]*)" should be pitched by "([^\"]*)"$/ do |talk_title, email|
-  Talk.find_by_title(talk_title).speaker.should == User.find_by_email(email)
-end
-
-Given /^"([^\"]*)" has pitched "([^\"]*)"$/ do |email, pitch_title|
-    Given "I am signed up as #{email.inspect}"
-    When  'I follow "Pitch a session"'
-    When  'I fill in the following:', table([
-      [ "Title", pitch_title],
-      %w{ Abstract QQ }
-      ])    
-    When  'I press "Create"'
-    Then  'I should see "Your pitch was created successfully."'
-    Then  'I follow "logout"'
 end
 
 When /^I check the box to accept the "([^\"]*)" talk$/ do |talk_name|
