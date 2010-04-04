@@ -17,6 +17,6 @@ class TalksController < ApplicationController
   private
   
   def parent_object
-    super || Barcamp.active.first
+    super || Barcamp.active.first || Barcamp.new
   end
 end
