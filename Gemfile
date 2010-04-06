@@ -1,7 +1,6 @@
 # A sample Gemfile
 source :gemcutter
 #
-gem "bundler", "0.9.14"
 gem "rails", "~> 2.3.5", :require => nil
 gem 'resource_controller', '~> 0.6.6'
 gem 'pg', '0.9.0'

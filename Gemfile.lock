@@ -42,10 +42,6 @@ dependencies:
     group: 
     - :cucumber
     version: ~> 0.7.0
-  bundler: 
-    group: 
-    - :default
-    version: = 0.9.14
   cucumber: 
     group: 
     - :cucumber
@@ -75,8 +71,6 @@ specs:
     version: 2.3.5
 - builder: 
     version: 2.1.2
-- bundler: 
-    version: 0.9.14
 - configuration: 
     version: 1.1.0
 - diff-lcs: 
@@ -121,7 +115,7 @@ specs:
     version: 1.2.5
 - webrat: 
     version: 0.7.0
-hash: b0981969758b4857cfb647dd4213cef1df578d52
+hash: d504c05c25a4065571c66d8b6e55b3dacd084885
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
