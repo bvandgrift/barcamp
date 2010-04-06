@@ -6,8 +6,8 @@ ActionController::Routing::Routes.draw do |map|
     barcamp.resources :talks
     barcamp.resources :acceptances    
   end
-
-  map.root :controller => :talks, :action => :index
+  
+  map.root :controller => "home"
 
   map.devise_for :users
 end

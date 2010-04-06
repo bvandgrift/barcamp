@@ -28,3 +28,21 @@ Given /^the following talks have been created for "([^\"]*)":$/ do |barcamp_name
   end
   And 'I follow "logout"'  
 end
+
+Given /^these talks have been scheduled for "([^\"]*)":$/ do |barcamp_name, table|
+  #        | talk_name   | speaker  | session   | room   |
+  Given 'I am signed up as "ruckman@cltblog.com"'
+  table.hashes.each do |hash|
+    When   "I am on the talks page for #{barcamp_name.inspect}"
+    And    'I follow "Add a new talk"'
+    And    "I fill in \"Title\" with #{hash['talk_name'].inspect}"
+    And    "I fill in \"Speaker name\" with #{hash['speaker'].inspect}"
+    And    'I press "Add talk"'
+    And    'I am on the talk acceptance page'
+    And    "I select #{hash['session'].inspect} from \"acceptance[period_id]\""
+    And    "I select #{hash['room'].inspect} from \"acceptance[room_id]\""
+    And    'I press "Accept"'
+  end
+  And 'I follow "logout"'  
+  
+end

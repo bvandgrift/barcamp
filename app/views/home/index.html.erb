@@ -1,0 +1,31 @@
+<div id="now">
+  <h2>Now</h2>
+  <p class="period"><%= @now.name if @now %></p>
+<% if @now_talks && @now_talks.any? %>
+  <% @now_talks.each do |a| %>
+    <%= a.room.name %>
+    <%= a.talk.title %>
+  <% end %>
+<% elsif @now && @now.name == "Lunch" %>
+<p class="lunch">Lunch!</p>
+<% else %>
+<p>No talks are currently scheduled for the current Barcamp session.</p>
+<% end %>
+</div>
+
+<div id="next">
+  <h2>Next</h2>
+    <p class="period"><%= @next_period.name if @next_period %></p>
+<% if @next_talks && @next_talks.any? %>
+  <% @next_talks.each do |acceptance| %>
+    <%= acceptance.room.name %>
+    <%= acceptance.talk.title %>
+  <% end %>
+<% elsif @next_period && @next_period.name == "Lunch" %>
+  <p class="lunch">Lunch!</p>
+<% elsif @next_period.nil? %>
+  <p class="over">That's all for this Barcamp!  Thanks!</p>
+<% else %>
+<p>No talks are currently scheduled for the next Barcamp session.</p>
+<% end %>
+</div>
