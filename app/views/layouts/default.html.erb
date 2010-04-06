@@ -5,15 +5,78 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>BarCamp III</title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'reset', 'default','styles', :cache => "all_styles" %>
 </head>
 <body>
-<% if user_signed_in? %>
-  <%= link_to "logout", destroy_user_session_path %>
-<% end %>
-<p style="color: green"><%= flash[:notice] %></p>
+  		<div id="header"> 
 
-<%= yield %>
+  			<h1 id="logo"><a href="http://barcampcharlotte.org" title="Home">BarCamp Charlotte</a></h1> 
+
+  			<ul id="nav"> 
+  				<li class="selected"> 
+  					<a href="http://barcampcharlotte.org" title="Home">Home</a> 
+  				</li> 
+
+
+  				<li> 
+  					<a href="http://barcampcharlotte.org/members/" title="Members">Members</a> 
+  				</li> 
+
+  									<li> 
+  						<a href="http://barcampcharlotte.org/groups/" title="Groups">Groups</a> 
+  					</li> 
+
+
+  				<li class="page_item page-item-257 current_page_parent"><a href="http://barcampcharlotte.org/blog/" title="Blog">Blog</a></li> 
+  <li class="page_item page-item-176"><a href="http://barcampcharlotte.org/sponsorship/" title="Sponsorship">Sponsorship</a></li> 
+
+  							</ul><!-- #nav --> 
+
+
+  		</div><!-- #header --> 
+          <div id="container">
+            <div id="content">
+              <div class="padder">
+                <%= yield %>
+              </div>
+            </div><!-- #content -->
+            <div id="sidebar">
+              <div class="padder">
+                <div id="text-9" class="widget widget_text">
+                  <h3 class="widgettitle">
+                    Platinum Sponsors
+                  </h3>
+                  <div class="textwidget">
+                    <a title="Area Fifteen" href="http://areafifteen.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/a15.png" alt="" /></a> <a title="Heels.com" href="http://www.heels.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/heels.png" alt="" /></a> <a title="The Cloud Market" href="http://www.thecloudmarket.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/tcm.jpg" alt="" /></a> <a title="Ally" href="http://www.ally.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/ally.png" alt="" /></a> <a title="Yahoo Developer Network" href="http://developer.yahoo.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/YahooDeveloper.png" alt="" /></a>
+                  </div><a title="Area Fifteen" href="http://areafifteen.com/"></a>
+                </div>
+                <div id="text-10" class="widget widget_text">
+                  <h3 class="widgettitle">
+                    <a title="Area Fifteen" href="http://areafifteen.com/">Gold Sponsors</a>
+                  </h3>
+                  <div class="textwidget">
+                    <a title="Area Fifteen" href="http://areafifteen.com/"></a><a title="Area Fifteen" href="http://areafifteen.com/"></a><a title="Lightbulb Coworking" href="http://lightbulbcoworking.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/lightbulb.jpg" alt="" /></a> <a title="Felicitea" href="http://www.felicitea.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/felicitea.jpg" alt="" /></a> <a title="StartCharlotte" href="http://www.startcharlotte.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/StartCLT-logo.jpg" alt="" /></a> <a title="Charlotte Apple Computer Club" href="http://www.charlotteappleclub.org/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/CACC.gif" alt="" /></a> <a title="FlyShark" href="http://www.flyshark.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/FlyShark.jpg" alt="" /></a> <a title="Counter Culture" href="http://www.counterculturecoffee.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/counterculture.png" alt="" /></a> <a title="Not Just Coffee" href="http://www.notjustcoffee.org/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/notjustcoffee.png" alt="" /></a> <a title="Cloud Castle" href="http://www.cloudcastlegroup.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/cloudcastle.jpg" alt="" /></a>
+                  </div>
+                </div>
+                <div id="text-11" class="widget widget_text">
+                  <h3 class="widgettitle">
+                    Silver Sponsors
+                  </h3>
+                  <div class="textwidget">
+                    <a title="HalogenTV" href="http://www.halogentv.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/halogen.jpg" alt="" /></a> <a title="3tailor" href="http://www.3tailer.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/3tailer.jpg" alt="" /></a> <img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/penguin.jpg" alt="" /> <a title="LawAvania" href="http://www.lawavania.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/lawavania.jpg" alt="" /></a> <a title="VisionPossible" href="http://www.visionpossible.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/visionpossible.png" alt="" /></a>
+                  </div>
+                </div>
+                <div id="text-8" class="widget widget_text">
+                  <h3 class="widgettitle">
+                    Media Partners
+                  </h3>
+                  <div class="textwidget">
+                    <a title="Charlotte Blog" href="http://cltblog.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/cltblog.gif" alt="" /></a> <a title="JDW Marketing" href="http://www.thecharlotteagency.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/jdw-logo.jpg" alt="" /></a>
+                  </div>
+                </div>
+              </div><!-- .padder -->
+            </div><!-- #sidebar -->
+          </div><!-- #container -->
 
 </body>
 </html>

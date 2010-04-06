@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   
+  layout "default"
+  
   def index
     @barcamp = Barcamp.active.find(:first, :include => :periods)
     render :template => "home/none" and return unless @barcamp

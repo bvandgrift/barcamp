@@ -1,0 +1,110 @@
+
+a {
+color: #55f;
+}
+a:hover, a:active {
+color: #888;
+}
+a:focus {
+outline: 1px dotted #ccc;
+}
+
+/*** HEADER **********/
+
+#header {
+padding: 15px 20px 8px 20px;
+height: 200px;
+background: url(http://barcampcharlotte.org/wp-content/themes/barcamp3/clt.gif);
+border-bottom: 8px solid #000;
+}
+
+#header h1 a {
+width: 600px;
+height: 200px;
+overflow: hidden;
+float: left;
+text-indent: -999px;
+background: url(http://barcampcharlotte.org/wp-content/themes/barcamp3/splatter-logo.png) top left no-repeat;
+margin: -200px 0 5px -20px;
+position: absolute;
+}
+
+/** NAV ************/
+
+#header ul {
+float: right;
+margin: 10px 10px 25px 0px;
+background: url(http://cltblog.com/wp-content/themes/moo-point/images/blackScreen80.png);
+padding: 10px 30px 20px 20px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+width: 130px;
+list-style-type: none;
+}
+
+#header ul li {
+margin: 0 0 0 0px;
+}
+
+#header ul li a {
+font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Taho
+ma, Verdana, Arial, sans-serif;
+font-weight: bold;
+color: #fff;
+display: block;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+text-decoration: none;
+text-shadow: #000 2px 2px 3px;
+text-align: right;
+font-size: 19px;
+line-height: 18px;
+border-bottom: none;
+background: transparent;
+text-transform: uppercase;
+padding: 0 !important;
+}
+                        #header ul li a:hover {
+color: #58f6ff;
+background: transparent;
+}
+                        #header ul li.selected a {
+font-family: "Helvetica Neue", "Helvetica", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Taho
+ma, Verdana, Arial, sans-serif;
+font-weight: bold;
+color: #fff;
+display: block;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+text-decoration: none;
+text-shadow: #000 2px 2px 3px;
+text-align: right;
+font-size: 19px;
+line-height: 18px;
+border-bottom: none;
+background: transparent;
+text-transform: uppercase;
+padding: 0 !important;
+}
+
+#header ul li a:hover {
+color: #58f6ff;
+background: transparent;
+}
+
+#header ul li.selected a {
+color: #ff7900;
+font-weight: bold;
+background: transparent;
+}
+
+#header ul li.selected a:hover {
+cursor: default;
+background: transparent;
+}
+
+ul#nav li.selected a, ul#nav li.current_page_item a {
+color: #ff7900;
+font-weight: bold;
+background: transparent;
+}
