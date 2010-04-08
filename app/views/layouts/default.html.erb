@@ -37,6 +37,11 @@
           <div id="container">
             <div id="content">
               <div class="padder">
+				<% if user_signed_in? %>
+				  <%= link_to "logout", destroy_user_session_path %>
+				<% end %>
+				<p style="color: green"><%= flash[:notice] %></p>
+	
                 <%= yield %>
               </div>
             </div><!-- #content -->

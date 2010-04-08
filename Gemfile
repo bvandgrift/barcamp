@@ -1,13 +1,15 @@
 # A sample Gemfile
 source :gemcutter
 #
-gem "rails", "~> 2.3.5", :require => nil
+gem "rails", "~> 2.3.5"
+gem "rack", "1.0.1"
 gem 'resource_controller', '~> 0.6.6'
 gem 'pg', '0.9.0'
 gem 'devise', '1.0.4'
 gem 'thin', '1.2.7'
 
 group :test do
+  gem 'test-unit', '1.2.3'
   gem 'rspec', '~> 1.3.0'
   gem 'rspec-rails', '~> 1.3.2'
   gem 'sqlite3-ruby', '~> 1.2.5'
