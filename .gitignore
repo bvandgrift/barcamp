@@ -7,3 +7,4 @@ config/database.yml
 vendor/bundler_gems
 db/*.sqlite3
 tmp
+webrat-*

@@ -2,14 +2,32 @@
   <h2>Now</h2>
   <p class="period"><%= @now.name if @now %></p>
 <% if @now_talks && @now_talks.any? %>
-  <% @now_talks.each do |a| %>
-    <%= a.room.name %>
-    <%= a.talk.title %>
-  <% end %>
+  <table class="talks">
+    <thead>
+      <tr>
+        <th>Room</th>
+        <th>Talk</th>
+        <th>Speaker</th>
+        <th>Hashtag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @now_talks.each do |a| %>
+      <tr>
+        <td><%= a.room.name %></td>
+        <td><%= a.talk.title %></td>
+        <td><%= a.talk.speaker_name %></td>
+        <td><%= a.talk.hashtag%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% elsif @now && @now.name == "Lunch" %>
 <p class="lunch">Lunch!</p>
+<% elsif @now_message %>
+<p><%= @now_message %></p>
 <% else %>
-<p>No talks are currently scheduled for the current Barcamp session.</p>
+<p>No talks are currently scheduled for the current BarCamp session.</p>
 <% end %>
 </div>
 
@@ -17,15 +35,30 @@
   <h2>Next</h2>
     <p class="period"><%= @next_period.name if @next_period %></p>
 <% if @next_talks && @next_talks.any? %>
-  <% @next_talks.each do |acceptance| %>
-    <%= acceptance.room.name %>
-    <%= acceptance.talk.title %>
-  <% end %>
-<% elsif @next_period && @next_period.name == "Lunch" %>
+  <table class="talks">
+    <thead>
+      <tr>
+        <th>Room</th>
+        <th>Talk</th>
+        <th>Speaker</th>
+        <th>Hashtag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @next_talks.each do |a| %>
+      <tr>
+        <td><%= a.room.name %></td>
+        <td><%= a.talk.title %></td>
+        <td><%= a.talk.speaker_name %></td>
+        <td><%= a.talk.hashtag%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table><% elsif @next_period && @next_period.name == "Lunch" %>
   <p class="lunch">Lunch!</p>
 <% elsif @next_period.nil? %>
   <p class="over">That's all for this Barcamp!  Thanks!</p>
 <% else %>
-<p>No talks are currently scheduled for the next Barcamp session.</p>
+<p>No talks are currently scheduled for the next BarCamp session.</p>
 <% end %>
 </div>
