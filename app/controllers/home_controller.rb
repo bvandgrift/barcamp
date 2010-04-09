@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   layout "default"
   
   def index
+    # All responses save for 5 minutes, barring shift-refresh
+    response.headers['Cache-Control'] = 'public, max-age=300'
     @barcamp = Barcamp.active.find(:first, :include => :periods)
     render :template => "home/none" and return unless @barcamp
     @time    = if params[:fake_time]
