@@ -1,6 +1,6 @@
 <div id="now">
   <h2>Now</h2>
-  <p class="period"><%= @now.name if @now %></p>
+  <p class="period"><%= "#{@now.name}  (#{@now.start_time}-#{@now.end_time})" if @now %></p>
 <% if @now_talks && @now_talks.any? %>
   <table class="talks">
     <thead>
