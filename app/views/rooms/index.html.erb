@@ -8,7 +8,7 @@
 <% @rooms.each do |room| %>
   <tr>
     <td><%=h room.name %></td>
-    <td><%= link_to 'Show', room %></td>
+    <td><%= link_to 'Show', barcamp_room_path(room) %></td>
     <td><%= link_to 'Edit', edit_barcamp_room_path(room.barcamp, room) %></td>
     <td><%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
