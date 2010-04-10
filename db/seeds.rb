@@ -4,8 +4,12 @@ barcamp = Barcamp.create(:title => "BarCamp Charlotte III",
           :start_time => Time.zone.parse('2010-04-10 09:00'),
           :end_time => Time.zone.parse('2010-04-10 18:00'))
 
-barcamp.rooms.create(:name => "Room A")
-barcamp.rooms.create(:name => "Room B")
+barcamp.rooms.create(:name => "1")
+barcamp.rooms.create(:name => "2")
+barcamp.rooms.create(:name => "3")
+barcamp.rooms.create(:name => "4")
+barcamp.rooms.create(:name => "5")
+barcamp.rooms.create(:name => "6")
           
           
 barcamp.periods.create(:name => "Session 1", 
@@ -26,4 +30,4 @@ barcamp.periods.create(:name => "Session 3",
                   
 barcamp.periods.create(:name => "Session 4", 
                   :start_time => Time.zone.parse('2010-04-10 17:00'),
-                  :end_time => Time.zone.parse('2010-04-10 18:00'))                  
+                  :end_time => Time.zone.parse('2010-04-10 18:00'))
