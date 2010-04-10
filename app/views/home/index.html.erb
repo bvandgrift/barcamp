@@ -33,7 +33,7 @@
 
 <div id="next">
   <h2>Next</h2>
-    <p class="period"><%= @next_period.name if @next_period %></p>
+  <p class="period"><%= "#{@next_period.name}  (#{@next_period.start_time}-#{@next_period.end_time})" if @next_period %></p>    
 <% if @next_talks && @next_talks.any? %>
   <table class="talks">
     <thead>
