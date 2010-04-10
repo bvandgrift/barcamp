@@ -15,7 +15,7 @@
       <% @now_talks.each do |a| %>
       <tr>
         <td><%= a.room.name %></td>
-        <td><%= a.talk.title %></td>
+        <td><%= link_to(a.talk.title, barcamp_talk_path(a.talk.barcamp, a.talk)) %></td>
         <td><%= a.talk.speaker_name %></td>
         <td><%= a.talk.hashtag%></td>
       </tr>
@@ -48,7 +48,7 @@
       <% @next_talks.each do |a| %>
       <tr>
         <td><%= a.room.name %></td>
-        <td><%= a.talk.title %></td>
+        <td><%= link_to(a.talk.title, barcamp_talk_path(a.talk.barcamp, a.talk)) %></td>
         <td><%= a.talk.speaker_name %></td>
         <td><%= a.talk.hashtag%></td>
       </tr>
