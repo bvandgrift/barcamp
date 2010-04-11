@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       Time.zone.now
     end
     render :template => "home/notyet" and return unless @barcamp.started?(@time)
-    render :template => "home/thanks!" and return unless @barcamp.finished?(@time)    
+    render :template => "home/thanks" and return unless @barcamp.finished?(@time)    
     
     # we know barcamp exists and has started.  Is there something happening now?
     @now = @barcamp.periods.now(@time)
