@@ -27,4 +27,8 @@ class Barcamp < ActiveRecord::Base
     time >= start_time
   end
   
+  def finished?(time = Time.zone.now)
+    time >= end_time
+  end
+  
 end
