@@ -11,7 +11,7 @@ dependencies:
   rails: 
     group: 
     - :default
-    version: ~> 2.3.5
+    version: = 2.3.8
   sqlite3-ruby: 
     group: 
     - :test
@@ -35,7 +35,7 @@ dependencies:
   rack: 
     group: 
     - :default
-    version: = 1.0.1
+    version: = 1.1.0
   rspec-rails: 
     group: 
     - :cucumber
@@ -68,17 +68,17 @@ specs:
 - rake: 
     version: 0.8.7
 - activesupport: 
-    version: 2.3.5
+    version: 2.3.8
 - rack: 
-    version: 1.0.1
+    version: 1.1.0
 - actionpack: 
-    version: 2.3.5
+    version: 2.3.8
 - actionmailer: 
-    version: 2.3.5
+    version: 2.3.8
 - activerecord: 
-    version: 2.3.5
+    version: 2.3.8
 - activeresource: 
-    version: 2.3.5
+    version: 2.3.8
 - builder: 
     version: 2.1.2
 - configuration: 
@@ -86,19 +86,19 @@ specs:
 - diff-lcs: 
     version: 1.1.2
 - json_pure: 
-    version: 1.2.4
+    version: 1.4.3
 - polyglot: 
     version: 0.3.1
 - term-ansicolor: 
     version: 1.0.5
 - treetop: 
-    version: 1.4.5
+    version: 1.4.8
 - cucumber: 
     version: 0.6.4
 - cucumber-rails: 
     version: 0.3.0
 - daemons: 
-    version: 1.0.10
+    version: 1.1.0
 - database_cleaner: 
     version: 0.5.2
 - warden: 
@@ -112,17 +112,17 @@ specs:
 - rubyforge: 
     version: 2.0.4
 - hoe: 
-    version: 2.6.0
+    version: 2.6.1
 - launchy: 
     version: 0.3.5
 - nokogiri: 
-    version: 1.4.1
+    version: 1.4.2
 - pg: 
     version: 0.9.0
 - rack-test: 
-    version: 0.5.3
+    version: 0.5.4
 - rails: 
-    version: 2.3.5
+    version: 2.3.8
 - resource_controller: 
     version: 0.6.6
 - rspec: 
@@ -136,8 +136,8 @@ specs:
 - thin: 
     version: 1.2.7
 - webrat: 
-    version: 0.7.0
-hash: 476421826a319b60821be38462330642988247aa
+    version: 0.7.1
+hash: 2124f68d199274fa2ed32f9695eb9d813caed537
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
