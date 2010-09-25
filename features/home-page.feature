@@ -22,10 +22,10 @@ Scenario: After start, before first session
 Scenario: At the start of session 1
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 1 | Room A |
-	| balloons    | BB       | Session 1 | Room B |
-	| freelancers | Bermon   | Session 2 | Room A |
-	| #foj        | underoak | Session 2 | Room B |
+	| git         | Jed      | Session 1 | 1 |
+	| balloons    | BB       | Session 1 | 2 |
+	| freelancers | Bermon   | Session 2 | 1 |
+	| #foj        | underoak | Session 2 | 2 |
 
   When I request the home page at "10:45" on the day of the event
   Then I should see "git" within "div#now"
@@ -35,10 +35,10 @@ Scenario: At the start of session 1
 Scenario: Before the start of session 2
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 1 | Room A |
-	| balloons    | BB       | Session 1 | Room B |
-	| freelancers | Bermon   | Session 2 | Room A |
-	| #foj        | underoak | Session 2 | Room B |
+	| git         | Jed      | Session 1 | 1 |
+	| balloons    | BB       | Session 1 | 2 |
+	| freelancers | Bermon   | Session 2 | 1 |
+	| #foj        | underoak | Session 2 | 2 |
 
   When I request the home page at "12:00" on the day of the event
   Then I should see "Socialize, but find your seats for the next session!" within "div#now"
@@ -47,10 +47,10 @@ Scenario: Before the start of session 2
 Scenario: During session 2
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 1 | Room A |
-	| balloons    | BB       | Session 1 | Room B |
-	| freelancers | Bermon   | Session 2 | Room A |
-	| #foj        | underoak | Session 2 | Room B |
+	| git         | Jed      | Session 1 | 1 |
+	| balloons    | BB       | Session 1 | 2 |
+	| freelancers | Bermon   | Session 2 | 1 |
+	| #foj        | underoak | Session 2 | 2 |
 
   When I request the home page at "12:45" on the day of the event
   And I should see "freelancers" within "div#now"
@@ -59,10 +59,10 @@ Scenario: During session 2
 Scenario: During lunch with no afternoon sessions
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 1 | Room A |
-	| balloons    | BB       | Session 1 | Room B |
-	| freelancers | Bermon   | Session 2 | Room A |
-	| #foj        | underoak | Session 2 | Room B |
+	| git         | Jed      | Session 1 | 1 |
+	| balloons    | BB       | Session 1 | 2 |
+	| freelancers | Bermon   | Session 2 | 1 |
+	| #foj        | underoak | Session 2 | 2 |
 
   When I request the home page at "13:45" on the day of the event
   And I should see "Lunch" within "div#now"
@@ -71,10 +71,10 @@ Scenario: During lunch with no afternoon sessions
 Scenario: After lunch with no afternoon sessions
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 1 | Room A |
-	| balloons    | BB       | Session 1 | Room B |
-	| freelancers | Bermon   | Session 2 | Room A |
-	| #foj        | underoak | Session 2 | Room B |
+	| git         | Jed      | Session 1 | 1 |
+	| balloons    | BB       | Session 1 | 2 |
+	| freelancers | Bermon   | Session 2 | 1 |
+	| #foj        | underoak | Session 2 | 2 |
 
   When I request the home page at "14:45" on the day of the event
   And I should see "Stay tuned" within "div#now"
@@ -83,12 +83,12 @@ Scenario: After lunch with no afternoon sessions
 Scenario: After lunch with some afternoon sessions
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 1 | Room A |
-	| balloons    | BB       | Session 1 | Room B |
-	| freelancers | Bermon   | Session 2 | Room A |
-	| #foj        | underoak | Session 2 | Room B |
-	| location-aware | Lyell   | Session 3 | Room A |
-	| lolcats       | James | Session 3 | Room B |
+	| git         | Jed      | Session 1 | 1 |
+	| balloons    | BB       | Session 1 | 2 |
+	| freelancers | Bermon   | Session 2 | 1 |
+	| #foj        | underoak | Session 2 | 2 |
+	| location-aware | Lyell   | Session 3 | 1 |
+	| lolcats       | James | Session 3 | 2 |
 	
 
   When I request the home page at "14:45" on the day of the event
@@ -98,10 +98,10 @@ Scenario: After lunch with some afternoon sessions
 Scenario: Last sessions
 	Given these talks have been scheduled for "BarCamp Charlotte III":
 	| talk_name   | speaker  | session   | room   |
-	| git         | Jed      | Session 3 | Room A |
-	| balloons    | BB       | Session 3 | Room B |
-	| freelancers | Bermon   | Session 4 | Room A |
-	| #foj        | underoak | Session 4 | Room B |
+	| git         | Jed      | Session 3 | 1 |
+	| balloons    | BB       | Session 3 | 2 |
+	| freelancers | Bermon   | Session 4 | 1 |
+	| #foj        | underoak | Session 4 | 2 |
 
   When I request the home page at "17:30" on the day of the event
   Then I should see "freelancers" within "div#now"

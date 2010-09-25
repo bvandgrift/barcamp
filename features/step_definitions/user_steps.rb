@@ -1,6 +1,6 @@
 Given /^I am signed up as "([^\"]*)"$/ do |email|
+  Given 'I am on the signup page'
   steps %Q{
-    Given I am on the signup page
     When I fill in the following:
       | Email                 | #{email} |
       | Password              | chonkyfire          |
@@ -8,6 +8,5 @@ Given /^I am signed up as "([^\"]*)"$/ do |email|
     And I press "Sign up"
     Then I should be on the home page
     And I should see "You have signed up successfully."
-    
   }
 end

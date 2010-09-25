@@ -16,7 +16,6 @@ Then /^the talk "([^\"]*)" should not be accepted for "([^\"]*)"$/ do |talk_name
 end
 
 Given /^the following talks have been created for "([^\"]*)":$/ do |barcamp_name, table|
-  Given 'I am signed up as "philidpodds@me.com"'
   table.hashes.each do |hash|
     #    | title | speaker | hashtag |
     When   "I am on the talks page for #{barcamp_name.inspect}"
@@ -26,7 +25,6 @@ Given /^the following talks have been created for "([^\"]*)":$/ do |barcamp_name
     And    "I fill in \"Hashtag\" with #{hash['hashtag'].inspect}"    
     And    'I press "Add talk"'
   end
-  And 'I follow "logout"'  
 end
 
 Given /^these talks have been scheduled for "([^\"]*)":$/ do |barcamp_name, table|

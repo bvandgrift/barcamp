@@ -1,7 +1,7 @@
 Given /^an active BarCamp "([^\"]*)"$/ do |title|
   Barcamp.create(:active => true, :title => title, 
-          :start_time => Time.zone.parse("2010-04-10 09:00"),
-          :end_time => Time.zone.parse("2010-04-10 18:00"))
+          :start_time => Time.zone.parse("2010-10-09 09:00"),
+          :end_time => Time.zone.parse("2010-10-09 18:00"))
 end
 
 Given /^"([^\"]*)" starts "([^\"]*)"$/ do |title, time_string|

@@ -11,7 +11,6 @@ Then /^"([^\"]*)" for "([^\"]*)" should end at "([^\"]*)"$/ do |session_name, ba
 end
 
 Given /^the following sessions have been created for "([^\"]*)":$/ do |barcamp_name, table|
-  Given 'I am signed up as "jim2@jimvanfleet.com"'
   table.hashes.each do |hash|
     #    | session_name | start_time | end_time |
     When  'I am on the sessions page'
@@ -21,5 +20,4 @@ Given /^the following sessions have been created for "([^\"]*)":$/ do |barcamp_n
     And   "I select #{hash['end_time'].inspect} as the \"End\" time"
     And   'I press "Create"'
   end
-  And 'I follow "logout"'
 end

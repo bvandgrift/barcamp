@@ -1,7 +1,3 @@
-<%
-rerun = ""
-rerun_opts = rerun.to_s.strip.empty? ? "--format progress features" : "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} #{rerun}"
-std_opts = "#{rerun_opts} --strict --tags ~@wip"
-%>
-default: <%= std_opts %>
+default: --format progress features --strict --tags ~@wip
 wip: --tags @wip:3 --wip features
+current: --tags @current features

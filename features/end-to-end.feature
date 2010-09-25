@@ -5,6 +5,7 @@ Feature: Admin end to end
 
   Background:
     Given an active BarCamp "BarCamp Charlotte III"
+    And   I am signed up as "philidpodds@me.com"
     And   the following rooms have been created for "BarCamp Charlotte III":
     | room_name |
     | Rabbit Hole |
@@ -31,9 +32,10 @@ Feature: Admin end to end
     | Inside the BarCamp scheduling application | @bigfleet | #barcampapp |
     | iPad stuff | @christopherbeck | #ipadclt |
     | Your business and the iPhone | @scottned | #iphoneclt |
-    
+    And I follow "logout"        
+
 Scenario: Talk scheduling success
-  Given I am signed up as "philipdodds@me.com"
+  Given I am signed up as "jim@me.com"
   When I am on the talk acceptance page
   Then I should see "Inside the BarCamp scheduling application"
   And  I should see "Your business and the iPhone"
@@ -44,14 +46,14 @@ Scenario: Talk scheduling success
   And the talk "iPad stuff" should not be accepted for "BarCamp Charlotte III"  
     
 Scenario: Undo talk scheduling
-  Given I am signed up as "philipdodds@me.com"
+  Given I am signed up as "jim@me.com"
   When I am on the talk acceptance page
   And  I press "Accept"
   And  I follow "Undo"
   Then the talk "Inside the BarCamp scheduling application" should not be accepted for "BarCamp Charlotte III"  
   
 Scenario: Prevent double-booking
-  Given I am signed up as "philipdodds@me.com"
+  Given I am signed up as "jim@me.com"
   When I am on the talk acceptance page
   And  I press "Accept"
   And  I press "Accept"
