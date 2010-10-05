@@ -9,11 +9,11 @@ class OmniauthController < ApplicationController
   end
   
   def twitter
-    render :text => request.env['rack.auth'].inspect
+    render :text => request.env.inspect
   end
   
   def facebook
-    render :text => request.env['rack.auth'].inspect
+    render :text => request.env.inspect
   end
   
 end
