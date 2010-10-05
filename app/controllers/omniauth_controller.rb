@@ -14,7 +14,7 @@ class OmniauthController < ApplicationController
   end
   
   def facebook
-    render :text => request.env["rack.request.query_hash"]["auth"]["user_info"].inspect
+    render :text => request.env.inspect
   end
   
 end
