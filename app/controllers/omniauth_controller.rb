@@ -9,7 +9,7 @@ class OmniauthController < ApplicationController
   end
   
   def twitter
-    render :text => request.env.inspect
+    render :text => request.env.keys.inspect
   end
   
   def facebook
