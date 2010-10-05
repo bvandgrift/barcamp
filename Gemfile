@@ -6,6 +6,7 @@ gem 'resource_controller', '~> 0.6.6'
 gem 'pg', '0.9.0'
 gem 'devise', '1.0.4'
 gem 'thin', '1.2.7'
+gem 'omniauth', '0.1.1'
 
 group :test do
   gem 'test-unit', '1.2.3'
