@@ -9,7 +9,7 @@ class OmniauthController < ApplicationController
   end
   
   def twitter
-    render :text => request.env.keys.inspect
+    render :text => request.env["rack_request_query_hash"]["auth"]["user_info"].inspect
   end
   
   def facebook
