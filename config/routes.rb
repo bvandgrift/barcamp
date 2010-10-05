@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.root :controller => "home"
+  
+  map.connect 'auth/:provider/callback', :controller => 'omniauth', :action => 'callback'
 
   map.devise_for :users
 end
