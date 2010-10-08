@@ -1,88 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
   <title><%= page_title %></title>
-  <%= stylesheet_link_tag 'reset', 'default','styles' %>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag -->
+
+  <link rel="shortcut icon" href="http://barcampclt.org/favicon.ico">
+  <link rel="apple-touch-icon" href="http://barcampclt.org/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="http://barcampclt.org/css/style.css?v=1">
+  <link rel="stylesheet" media="handheld" href="http://barcampclt.org/css/handheld.css?v=1"><!-- For the less-enabled mobile browsers like Opera Mini -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script><!-- jQuery linked from Google = faster & possibly already in users cache -->
+  <script src="http://barcampclt.org/js/plugins.js"></script>
+  <script src="http://barcampclt.org/js/modernizr-1.5.min.js"></script><!-- Modernizr enables HTML5 elements & feature detects -->
+  <script src="http://barcampclt.org/js/script.js"></script>
 </head>
-<body>
-  		<div id="header"> 
 
-  			<h1 id="logo"><a href="http://barcampcharlotte.heroku.com" title="Home">BarCamp Charlotte</a></h1> 
+<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <body class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <body class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
-  			<ul id="nav"> 
-  				<li class="selected"> 
-  					<a href="http://barcampcharlotte.org" title="Home">Home</a> 
-  				</li> 
+<div id="container">
 
+  <header id="masthead" class="clearfix">
+    <a href="http://barcampclt.org" title="BarCamp Charlotte" id="logo" class="ir">BarCamp Charlotte</a>
 
-  				<li> 
-  					<a href="http://barcampcharlotte.org/members/" title="Members">Members</a> 
-  				</li> 
+    <nav class="clearfix">
+      <ul>
+        <li class="home"><a href="http://barcampclt.org"><span></span>Home</a></li>
+        <li class="venue"><a href="http://barcampclt.org/venue/"><span></span>Venue</a></li>
+        <li class="schedule active"><a href="http://barcampcharlotte.heroku.com/"><span></span>Schedule</a></li>
+        <li class="sponsor"><a href="http://barcampclt.org/sponsor/"><span></span>Sponsor</a></li>
+        <li class="volunteer"><a href="http://barcampclt.org/volunteer/"><span></span>Volunteer</a></li>
+        <li class="register"><a href="http://anyvite.com/events/home/noui3c9ym5"><span></span>Register</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  									<li> 
-  						<a href="http://barcampcharlotte.org/groups/" title="Groups">Groups</a> 
-  					</li> 
+    
+  <% if user_signed_in? %>
+    <%= link_to "logout", destroy_user_session_path %>
+  <% end %>
+  
+	<p style="color: green"><%= flash[:notice] %></p>
 
+  <%= yield %>
+  
+  <footer class="clearfix">
+    <div class="inner">
+      <p>BarCamp Charlotte content is licensed under a Creative Commons Attribution 3.0 License except where otherwise noted.</p>
+      <p>Designed by <a href="http://bermonpainter.com" rel="external">Bermon Painter</a> and developed by <a href="http://itsbspoke.com/"><img src="http://itsbspoke.com/images/logo.png" alt="BSpoke"/></a>.</p>
+      <a href="http://barcampcharlotte.org" class="logo hidden">BarCamp Charlotte</a>
+    </div>
+  </footer>
+</div><!-- END #container -->
 
-  				<li class="page_item page-item-257 current_page_parent"><a href="http://barcampcharlotte.org/blog/" title="Blog">Blog</a></li> 
-  <li class="page_item page-item-176"><a href="http://barcampcharlotte.org/sponsorship/" title="Sponsorship">Sponsorship</a></li> 
+<!--[if lt IE 7 ]>
+<script src="/http://barcampclt.org/js/dd_belatedpng.js?v=1"></script>
+<![endif]-->
 
-  							</ul><!-- #nav --> 
-
-
-  		</div><!-- #header --> 
-          <div id="container">
-            <div id="content">
-              <div class="padder">
-				<% if user_signed_in? %>
-				  <%= link_to "logout", destroy_user_session_path %>
-				<% end %>
-				<p style="color: green"><%= flash[:notice] %></p>
-	
-                <%= yield %>
-                <p>Schedule application brought to you by <a href="http://itsbspoke.com/"><img src="http://itsbspoke.com/images/logo.png"></a></p>
-              </div>
-            </div><!-- #content -->
-            <div id="sidebar">
-              <div class="padder">
-                <div id="text-9" class="widget widget_text">
-                  <h3 class="widgettitle">
-                    Platinum Sponsors
-                  </h3>
-                  <div class="textwidget">
-                    <a title="Area Fifteen" href="http://areafifteen.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/a15.png" alt="" /></a> <a title="Heels.com" href="http://www.heels.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/heels.png" alt="" /></a> <a title="The Cloud Market" href="http://www.thecloudmarket.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/tcm.jpg" alt="" /></a> <a title="Ally" href="http://www.ally.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/ally.png" alt="" /></a> <a title="Yahoo Developer Network" href="http://developer.yahoo.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/YahooDeveloper.png" alt="" /></a>
-                  </div><a title="Area Fifteen" href="http://areafifteen.com/"></a>
-                </div>
-                <div id="text-10" class="widget widget_text">
-                  <h3 class="widgettitle">
-                    <a title="Area Fifteen" href="http://areafifteen.com/">Gold Sponsors</a>
-                  </h3>
-                  <div class="textwidget">
-                    <a title="Area Fifteen" href="http://areafifteen.com/"></a><a title="Area Fifteen" href="http://areafifteen.com/"></a><a title="Lightbulb Coworking" href="http://lightbulbcoworking.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/lightbulb.jpg" alt="" /></a> <a title="Felicitea" href="http://www.felicitea.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/felicitea.jpg" alt="" /></a> <a title="StartCharlotte" href="http://www.startcharlotte.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/StartCLT-logo.jpg" alt="" /></a> <a title="Charlotte Apple Computer Club" href="http://www.charlotteappleclub.org/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/CACC.gif" alt="" /></a> <a title="FlyShark" href="http://www.flyshark.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/FlyShark.jpg" alt="" /></a> <a title="Counter Culture" href="http://www.counterculturecoffee.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/counterculture.png" alt="" /></a> <a title="Not Just Coffee" href="http://www.notjustcoffee.org/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/notjustcoffee.png" alt="" /></a> <a title="Cloud Castle" href="http://www.cloudcastlegroup.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/cloudcastle.jpg" alt="" /></a>
-                  </div>
-                </div>
-                <div id="text-11" class="widget widget_text">
-                  <h3 class="widgettitle">
-                    Silver Sponsors
-                  </h3>
-                  <div class="textwidget">
-                    <a title="HalogenTV" href="http://www.halogentv.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/halogen.jpg" alt="" /></a> <a title="3tailor" href="http://www.3tailer.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/3tailer.jpg" alt="" /></a> <img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/penguin.jpg" alt="" /> <a title="LawAvania" href="http://www.lawavania.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/lawavania.jpg" alt="" /></a> <a title="VisionPossible" href="http://www.visionpossible.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/visionpossible.png" alt="" /></a>
-                  </div>
-                </div>
-                <div id="text-8" class="widget widget_text">
-                  <h3 class="widgettitle">
-                    Media Partners
-                  </h3>
-                  <div class="textwidget">
-                    <a title="Charlotte Blog" href="http://cltblog.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/cltblog.gif" alt="" /></a> <a title="JDW Marketing" href="http://www.thecharlotteagency.com/"><img src="http://barcampcharlotte.org/wp-content/themes/barcamp3/jdw-logo.jpg" alt="" /></a>
-                  </div>
-                </div>
-              </div><!-- .padder -->
-            </div><!-- #sidebar -->
-          </div><!-- #container -->
-
+<script>
+var _gaq = [['_setAccount', 'UA-798946-28'], ['_trackPageview']];
+(function(d, t) {
+  var g = d.createElement(t),
+  s = d.getElementsByTagName(t)[0];
+  g.async = true;
+  g.src = '//www.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g, s);
+})(document, 'script');
+</script>
 </body>
 </html>

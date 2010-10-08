@@ -1,100 +1,112 @@
-<div id="now">
-  <h2>Now</h2>
-  <p class="period"><%= "#{@now.name}  (#{@now.start_time}-#{@now.end_time})" if @now %></p>
-<% if @now_talks && @now_talks.any? %>
-  <table class="talks">
-    <thead>
-      <tr>
-        <th>Room</th>
-        <th>Talk</th>
-        <th>Speaker</th>
-        <th>Hashtag</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @now_talks.each do |a| %>
-      <tr>
-        <td><%= a.room.name %></td>
-        <td><%= link_to(a.talk.title, barcamp_talk_path(a.talk.barcamp, a.talk)) %></td>
-        <td><%= a.talk.speaker_name %></td>
-        <td><%= a.talk.hashtag%></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% elsif @now && @now.name == "Lunch" %>
-<p class="lunch">Lunch!</p>
-<% elsif @now_message %>
-<p><%= @now_message %></p>
-<% else %>
-<p>No talks are currently scheduled for the current BarCamp session.</p>
-<% end %>
-</div>
+        <article id="schedule" class="clearfix">
+          <h1>Schedule</h1>
 
-<div id="next">
-  <h2>Next</h2>
-  <p class="period"><%= "#{@next_period.name}  (#{@next_period.start_time}-#{@next_period.end_time})" if @next_period %></p>    
-<% if @next_talks && @next_talks.any? %>
-  <table class="talks">
-    <thead>
-      <tr>
-        <th>Room</th>
-        <th>Talk</th>
-        <th>Speaker</th>
-        <th>Hashtag</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @next_talks.each do |a| %>
-      <tr>
-        <td><%= a.room.name %></td>
-        <td><%= link_to(a.talk.title, barcamp_talk_path(a.talk.barcamp, a.talk)) %></td>
-        <td><%= a.talk.speaker_name %></td>
-        <td><%= a.talk.hashtag%></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table><% elsif @next_period && @next_period.name == "Lunch" %>
-  <p class="lunch">Lunch!</p>
-<% elsif @next_period.nil? %>
-  <p class="over">That's all for this Barcamp!  Thanks!</p>
-<% else %>
-<p>No talks are currently scheduled for the next BarCamp session.</p>
-<% end %>
-</div>
+          <section id="happening-now">
+            <h2>Happening Right Now</h2>
+            <p><%= "#{@now.name}  (#{@now.start_time}-#{@now.end_time})" if @now %></p>
+            
+            <%# the list will need some specific classes depending on what's happening
+            there will be 4 icons:
+            1.  coffee
+            2.  pitches
+            3.  sessions
+            4.  lunch
+            %>
+            
+            <ul>
+              <% if @now_talks && @now_talks.any? %>
+              <% @now_talks.each do |a| %>
+              <li class="session clearfix"><span class="icon"></span>
+                <span class="room"><%= a.room.name %></span>
+                <b><%= link_to(a.talk.title, barcamp_talk_path(a.talk.barcamp, a.talk)) %></b>
+                <span class="speaker"><%= a.talk.speaker_name %></span>
+                <%= a.talk.hashtag %>
+              </li>  
+              <% end %>
+              <% elsif @now && @now.name == "Lunch" %>
+              <li class="lunch clearfix"><span class="icon"></span>
+                <b>Lunch</b>
+                <span class="details">Provided by local food vendors and restaurants.</span>
+              </li>
+              <% elsif @now_message %>
+              <li class="now clearfix"><span class="icon"></span>
+                <b><%= @now_message %></b>
+              </li>
+              <% else %>
+              <li class="nothing clearfix"><span class="icon"></span>
+                <b>No talks are currently scheduled for the current BarCamp session.</b>
+              </li>
+              <% end %>
+            </ul>
+            
+          </seciton><!-- END happening-now -->
 
-<div class="twitter">
-  <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-  <script>
-  new TWTR.Widget({
-    version: 2,
-    type: 'search',
-    search: '#barcampclt',
-    interval: 6000,
-    title: 'BarCamp Charlotte III',
-    subject: '#barcampclt',
-    width: 250,
-    height: 300,
-    theme: {
-      shell: {
-        background: '#8ec1da',
-        color: '#ffffff'
-      },
-      tweets: {
-        background: '#ffffff',
-        color: '#444444',
-        links: '#1985b5'
-      }
-    },
-    features: {
-      scrollbar: false,
-      loop: true,
-      live: true,
-      hashtags: true,
-      timestamp: true,
-      avatars: true,
-      behavior: 'default'
-    }
-  }).render().start();
-  </script>
-</div>
+          <section id="up-next">
+            <h2>Coming Up Next</h2>
+            <p><%= "#{@next_period.name}  (#{@next_period.start_time}-#{@next_period.end_time})" if @next_period %></p>
+
+            <ul>
+              <% if @next_talks && @next_talks.any? %>
+              <% @next_talks.each do |a| %>
+              <li class="session clearfix"><span class="icon"></span>
+                <span class="room"><%= a.room.name %></span>
+                <b><%= link_to(a.talk.title, barcamp_talk_path(a.talk.barcamp, a.talk)) %></b>
+                <span class="speaker"><%= a.talk.speaker_name %></span>
+                <%= a.talk.hashtag %>
+              </li>
+              <% end %> 
+              <% elsif @next_period && @next_period.name == "Lunch" %>
+              <li class="lunch clearfix"><span class="icon"></span>
+                <b>Lunch</b>
+                <span class="details">Provided by local food vendors and restaurants.</span>
+              </li>
+              <% elsif @next_period.nil? %>
+              <li class="now clearfix"><span class="icon"></span>
+                <b><%= @now_message %></b>
+              </li>
+              <% else %>
+              <li class="nothing clearfix"><span class="icon"></span>
+                <b>No talks are currently scheduled for the current BarCamp session.</b>
+              </li>
+              <% end %>
+            </ul>
+          </seciton><!-- END up-next -->
+
+
+          <%#
+          <div class="twitter hidden">
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'search',
+              search: '#barcampclt',
+              interval: 6000,
+              title: 'BarCamp Charlotte IV',
+              subject: '#barcampclt',
+              width: 250,
+              height: 300,
+              theme: {
+                shell: {
+                  background: '#8ec1da',
+                  color: '#ffffff'
+                },
+                tweets: {
+                  background: '#ffffff',
+                  color: '#444444',
+                  links: '#1985b5'
+                }
+              },
+              features: {
+                scrollbar: false,
+                loop: true,
+                live: true,
+                hashtags: true,
+                timestamp: true,
+                avatars: true,
+                behavior: 'default'
+              }
+            }).render().start();
+            </script>
+          </div>
+          %>
