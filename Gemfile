@@ -23,4 +23,5 @@ group :cucumber do
   gem 'rspec', '2.5.0'
   gem 'rspec-rails', '2.5.0'
   gem 'launchy', '0.3.7'
+  gem 'chronic', '0.3.0'
 end

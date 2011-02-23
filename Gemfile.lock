@@ -53,6 +53,7 @@ GEM
     celerity (0.8.8)
     childprocess (0.1.7)
       ffi (~> 0.6.3)
+    chronic (0.3.0)
     configuration (1.2.0)
     cucumber (0.10.0)
       builder (>= 2.1.2)
@@ -199,6 +200,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (= 0.4.1.2)
+  chronic (= 0.3.0)
   cucumber (= 0.10.0)
   cucumber-rails (= 0.3.2)
   database_cleaner (= 0.6.4)
