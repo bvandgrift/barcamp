@@ -1,12 +1,13 @@
 # A sample Gemfile
 source :gemcutter
 #
-gem "rails", "2.3.8"
-gem 'resource_controller', '~> 0.6.6'
+gem "rails", "3.0.4"
+gem 'inherited_resources', '1.2.1'
 gem 'pg', '0.9.0'
-gem 'devise', '1.0.4'
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'thin', '1.2.7'
-gem 'omniauth', '0.1.1'
+gem 'omniauth', '0.1.3'
+gem "oa-oauth", :require => "omniauth/oauth"
 
 group :test do
   gem 'test-unit', '1.2.3'
