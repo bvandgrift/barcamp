@@ -1,4 +1,32 @@
+#Previous
+#ActionController::Routing::Routes.draw do |map|
+
+  #map.resources :barcamps do |barcamp|
+    #barcamp.resources :rooms
+    #barcamp.resources :periods
+    #barcamp.resources :talks
+    #barcamp.resources :acceptances    
+  #end
+  
+  #map.root :controller => "home"
+  
+  #map.connect 'auth/:provider/callback', :controller => 'omniauth', :action => 'callback'
+
+  #map.devise_for :users
+#end
+
+
 Barcamp::Application.routes.draw do
+  
+  resources :barcamps do
+    resources :rooms, :periods, :talks, :acceptances
+  end
+
+  root :to => "home#index"
+
+  map.devise_for :users
+
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +83,4 @@ Barcamp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-end
+
