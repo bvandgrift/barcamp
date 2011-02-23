@@ -7,11 +7,8 @@ class HomeController < ApplicationController
     response.headers['Cache-Control'] = 'public, max-age=60'
     @barcamp = Barcamp.active.find(:first, :include => :periods)
     render :template => "home/none" and return unless @barcamp
-    @time    = if params[:fake_time]
-      Time.zone.parse(params[:fake_time]) 
-    else
-      Time.zone.now
-    end
+    @time    = Time.now # depending on Timecop for anything else
+    puts @time.inspect
     render :template => "home/notyet" and return unless @barcamp.started?(@time)
     render :template => "home/thanks" and return if @barcamp.finished?(@time)    
     
