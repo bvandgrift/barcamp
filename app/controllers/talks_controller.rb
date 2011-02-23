@@ -6,7 +6,7 @@ class TalksController < ApplicationController
   before_filter :initialize_talk, :only => :index
   
   def initialize_talk
-    @talk = parent_object.talks.new
+    @talk = parent.talks.new
   end
 
   def create
