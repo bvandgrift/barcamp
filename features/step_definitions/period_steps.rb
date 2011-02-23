@@ -16,8 +16,8 @@ Given /^the following sessions have been created for "([^\"]*)":$/ do |barcamp_n
     When  'I am on the sessions page'
     And   'I follow "Add a session"'
     And   "I fill in \"Name\" with #{hash['session_name'].inspect}"
-    And   "I select #{hash['start_time'].inspect} as the \"Start\" time"
-    And   "I select #{hash['end_time'].inspect} as the \"End\" time"
+    And   "I select #{hash['start_time'].inspect} as the \"period_start_time\" date and time"
+    And   "I select #{hash['end_time'].inspect} as the \"period_end_time\" date and time"
     And   'I press "Create"'
   end
 end
