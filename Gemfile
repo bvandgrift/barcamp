@@ -10,19 +10,17 @@ gem 'omniauth', '0.1.3'
 gem "oa-oauth", :require => "omniauth/oauth"
 
 group :test do
-  gem 'test-unit', '1.2.3'
-  gem 'rspec', '~> 1.3.0'
-  gem 'rspec-rails', '~> 1.3.2'
-  gem 'sqlite3-ruby', '~> 1.2.5'
+  gem 'rspec', '2.5.0'
+  gem 'rspec-rails', '2.5.0'
 end
 
 group :cucumber do
-  gem 'email_spec', '~> 0.6.2'
-  gem 'cucumber', '~> 0.6.4'
-  gem 'cucumber-rails', '~> 0.3.0'
-  gem 'database_cleaner', '~> 0.5.0'
-  gem 'webrat', '~> 0.7.0'
-  gem 'rspec', '~> 1.3.0'
-  gem 'rspec-rails', '~> 1.3.2'
-  gem 'launchy', '~> 0.3.5'
+  gem 'email_spec', '1.1.1'
+  gem 'cucumber', '0.10.0'
+  gem 'cucumber-rails', '0.3.2'
+  gem 'database_cleaner', '0.6.4'
+  gem 'capybara', '0.4.1.2'
+  gem 'rspec', '2.5.0'
+  gem 'rspec-rails', '2.5.0'
+  gem 'launchy', '0.3.7'
 end
