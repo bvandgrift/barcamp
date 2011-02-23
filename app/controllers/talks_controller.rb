@@ -1,22 +1,21 @@
 class TalksController < ApplicationController
-  resource_controller
+  inherit_resources
   belongs_to :barcamp
-  #before_filter :authenticate_user!, :actions => [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :actions => [:new, :create, :edit, :update, :destroy]
   
-  index.before do
+  before_filter :initialize_talk, :only => :index
+  
+  def initialize_talk
     @talk = parent_object.talks.new
   end
-  
-  create do
-    success do
-      flash { "Your pitch was created successfully."}
-      wants.html { redirect_to barcamp_talks_path(@barcamp) }
-    end
+
+  def create
+    create!(:notice => "Your pitch was recorded successfully."){ barcamp_talks_path(@barcamp) }
   end
   
   private
   
-  def parent_object
-    super || Barcamp.active.first || Barcamp.new
+  def parent
+    super || Barcamp.active.first
   end
 end

@@ -1,4 +1,4 @@
-Barcamp::Application.routes.draw do
+BarcampApp::Application.routes.draw do
   
   resources :barcamps do
     resources :rooms, :periods, :talks, :acceptances

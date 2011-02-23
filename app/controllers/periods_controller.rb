@@ -1,9 +1,12 @@
 class PeriodsController < ApplicationController
-  resource_controller
+  inherit_resources
   before_filter :authenticate_user!
   belongs_to :barcamp
-  new_action.before do
-    object.start_time = @barcamp.start_time
-    object.end_time = @barcamp.end_time
+
+  before_filter :set_times, :only => :new
+  
+  def set_times
+    resource.start_time = parent.start_time
+    resource.end_time = parent.end_time
   end
 end

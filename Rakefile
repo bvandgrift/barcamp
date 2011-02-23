@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Barcamp::Application.load_tasks
+BarcampApp::Application.load_tasks

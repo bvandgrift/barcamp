@@ -1,23 +1,21 @@
 class AcceptancesController < ApplicationController
-  resource_controller
+  inherit_resources
   belongs_to :barcamp
-  
-  index do
-    before do
-      @talks = parent_object.talks.find(:all, :include => :acceptance).select{ |t| t.acceptance.nil? }
-      @rooms = parent_object.rooms
-      @periods = parent_object.periods
-    end
+ 
+  before_filter :load_choices, :only => :index
+
+  def create
+    create!{ barcamp_acceptances_path(@barcamp) }
   end
-  
-  create do
-    failure.wants.html do
-      flash[:error] = object.errors.full_messages.to_sentence
-      redirect_to barcamp_acceptances_path(@barcamp)
-    end 
-    wants.html { redirect_to barcamp_acceptances_path(@barcamp) }
+
+  private 
+
+  def load_choices
+    @talks = parent_object.talks.find(:all, :include => :acceptance).select{ |t| t.acceptance.nil? }
+    @rooms = parent_object.rooms
+    @periods = parent_object.periods
   end
-  
+    
   private
   
   def collection

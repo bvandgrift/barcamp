@@ -1,5 +1,5 @@
 class BarcampsController < ApplicationController
-  resource_controller
+  inherit_resources
   before_filter :authenticate_user!, :except => :show
   actions :show
 end
