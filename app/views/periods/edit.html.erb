@@ -1,6 +1,6 @@
 <h1>Editing period</h1>
 
-<% form_for(@period, :url => barcamp_period_path(@barcamp, @period)) do |f| %>
+<%= form_for(@period, :url => barcamp_period_path(@barcamp, @period)) do |f| %>
   <% if @period.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@period.errors.count, "error") %> prohibited this period from being saved:</h2>

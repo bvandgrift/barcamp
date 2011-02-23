@@ -1,6 +1,6 @@
 <h1>Editing talk</h1>
 
-<% form_for(@talk, :url => barcamp_talk_path(@talk.barcamp, @talk)) do |f| %>
+<%= form_for(@talk, :url => barcamp_talk_path(@talk.barcamp, @talk)) do |f| %>
   <% if @talk.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@talk.errors.count, "error") %> prohibited this talk from being saved:</h2>

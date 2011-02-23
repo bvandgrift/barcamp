@@ -1,6 +1,6 @@
 <h1>New barcamp</h1>
 
-<% form_for(@barcamp) do |f| %>
+<%= form_for(@barcamp) do |f| %>
   <% if @barcamp.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@barcamp.errors.count, "error") %> prohibited this Barcamp from being saved:</h2>

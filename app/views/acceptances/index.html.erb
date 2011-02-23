@@ -12,7 +12,7 @@
   </tr>
 
   <% @talks.each do |talk| %>
-    <% form_for :acceptance, :url => barcamp_acceptances_path(@barcamp) do |f| %>
+    <%= form_for :acceptance, :url => barcamp_acceptances_path(@barcamp) do |f| %>
     <tr class="<%= dom_id(talk) %>">
       <td><%=h talk.title %> <%= hidden_field :acceptance, :talk_id, :value => talk.id %></td>
       <td><%=h talk.speaker_name %></td>

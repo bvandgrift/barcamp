@@ -1,6 +1,6 @@
 <h1>New room</h1>
 
-<% form_for(@room, :url => barcamp_rooms_path(@barcamp)) do |f| %>
+<%= form_for(@room, :url => barcamp_rooms_path(@barcamp)) do |f| %>
   <% if @room.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
