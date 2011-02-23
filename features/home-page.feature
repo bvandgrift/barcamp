@@ -6,10 +6,8 @@ Feature: Home page schedule
   Background:
     Given the seed data is loaded  
 
-@wip
 Scenario: Before BarCamp starts
   When I request the home page at "8:00" on the day of the event
-  Then show me the page
   Then I should not see "Now"
   And  I should not see "Next"
   And  I should see "BarCamp Charlotte V has not yet begun."
