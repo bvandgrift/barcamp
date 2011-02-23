@@ -1,7 +1,7 @@
 class Barcamp < ActiveRecord::Base
   validates_presence_of :title, :start_time, :end_time
   
-  named_scope :active, :conditions => {:active => true}
+  scope :active, :conditions => {:active => true}
 
   has_many :acceptances
   has_many :accepted_talks, :through => :acceptances, :source => :talk

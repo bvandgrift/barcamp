@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :authenticatable, :recoverable, :registerable, :rememberable, 
+  devise :database_authenticatable, :recoverable, :registerable, :rememberable, 
           :omniauthable, :trackable, :validatable
   
   has_many :talks
