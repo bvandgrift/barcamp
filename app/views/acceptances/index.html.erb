@@ -42,7 +42,7 @@
       <td><%=h a.period.name %></td>
       <td><%= link_to 'Undo', barcamp_acceptance_path(@barcamp, a), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
-  <% end if @acceptances.any? %>
+  <% end %>
 </table>
 
 <%= link_to "Rooms", barcamp_rooms_path(@barcamp) %>

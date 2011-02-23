@@ -5,7 +5,10 @@ class AcceptancesController < ApplicationController
   before_filter :load_choices, :only => :index
 
   def create
-    create!{ barcamp_acceptances_path(@barcamp) }
+    create! do |success, failure|
+      success.html { redirect_to barcamp_acceptances_path(@barcamp) }
+      failure.html { flash[:error] = "No double booking!"; redirect_to barcamp_acceptances_path(@barcamp) }
+    end
   end
 
   private 
@@ -19,6 +22,6 @@ class AcceptancesController < ApplicationController
   private
   
   def collection
-    @collection ||= end_of_association_chain.find(:all, :include => [:room, :period], :order => "rooms.name, periods.start_time")
+    @acceptances ||= end_of_association_chain.find(:all, :include => [:room, :period], :order => "rooms.name, periods.start_time")
   end
 end
