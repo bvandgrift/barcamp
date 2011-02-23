@@ -61,12 +61,12 @@
                 <span class="details">Provided by local food vendors and restaurants.</span>
               </li>
               <% elsif @next_period.nil? %>
-              <li class="now clearfix"><span class="icon"></span>
-                <b><%= @now_message %></b>
+              <li class="next clearfix"><span class="icon"></span>
+                <b><%= @next_message %></b>
               </li>
               <% else %>
               <li class="nothing clearfix"><span class="icon"></span>
-                <b>No talks are currently scheduled for the current BarCamp session.</b>
+                <b>No talks are currently scheduled for the next BarCamp session.</b>
               </li>
               <% end %>
             </ul>

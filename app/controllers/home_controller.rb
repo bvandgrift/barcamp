@@ -22,6 +22,8 @@ class HomeController < ApplicationController
     @next_period  = @barcamp.periods.first_after(next_block)
     if @next_period
       @next_talks = find_talks(@next_period)
+    else
+      @next_message = "Thanks for attending!"
     end
     
     if @now.nil?
