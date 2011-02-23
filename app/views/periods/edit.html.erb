@@ -1,7 +1,17 @@
 <h1>Editing period</h1>
 
 <% form_for(@period, :url => barcamp_period_path(@barcamp, @period)) do |f| %>
-  <%= f.error_messages %>
+  <% if @period.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@period.errors.count, "error") %> prohibited this period from being saved:</h2>
+
+      <ul>
+      <% @period.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <p>
     <%= f.label :name %><br />

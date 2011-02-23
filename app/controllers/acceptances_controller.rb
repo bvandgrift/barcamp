@@ -11,9 +11,9 @@ class AcceptancesController < ApplicationController
   private 
 
   def load_choices
-    @talks = parent_object.talks.find(:all, :include => :acceptance).select{ |t| t.acceptance.nil? }
-    @rooms = parent_object.rooms
-    @periods = parent_object.periods
+    @talks = parent.talks.find(:all, :include => :acceptance).select{ |t| t.acceptance.nil? }
+    @rooms = parent.rooms
+    @periods = parent.periods
   end
     
   private
