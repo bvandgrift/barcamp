@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :talks
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-    data = access_token['extra']['user_hash']
+    data = access_token['user_info']
     if user = User.find_by_email(data["email"])
       user
     else # Create an user with a stub password. 
