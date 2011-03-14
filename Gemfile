@@ -6,8 +6,7 @@ gem 'inherited_resources', '1.2.1'
 gem 'pg', '0.9.0'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'thin', '1.2.7'
-gem 'omniauth', '0.1.3'
-gem "oa-oauth", :require => "omniauth/oauth"
+gem 'omniauth', '0.2.0'
 
 group :test do
   gem 'rspec', '2.5.0'
