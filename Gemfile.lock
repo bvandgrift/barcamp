@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/plataformatec/devise.git
-  revision: 42d002702c65b58b21ee2b35bbc9aa1e8fb51c1d
+  revision: d58a72ee32d74e354d797c330a4334388afd4643
   specs:
-    devise (1.2.rc)
+    devise (1.2.rc2)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
@@ -38,7 +38,7 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     addressable (2.2.4)
-    arel (2.0.8)
+    arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capybara (0.4.1.2)
@@ -78,7 +78,7 @@ GEM
       rack (< 2, >= 1.1.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    gherkin (2.3.3)
+    gherkin (2.3.4)
       json (~> 1.4.6)
     has_scope (0.5.0)
     i18n (0.5.0)
@@ -142,7 +142,7 @@ GEM
     pg (0.9.0)
     polyglot (0.3.1)
     pyu-ruby-sasl (0.0.3.2)
-    rack (1.2.1)
+    rack (1.2.2)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-openid (1.2.0)

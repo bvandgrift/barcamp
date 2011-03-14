@@ -10,3 +10,8 @@ Given /^I am signed up as "([^\"]*)"$/ do |email|
     And I should see "You have signed up successfully."
   }
 end
+
+Then /^there should be "([^"]*)" users$/ do |user_count|
+  User.count.should == user_count.to_i
+end
+
