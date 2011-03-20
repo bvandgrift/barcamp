@@ -1,5 +1,5 @@
 When /^(?:|I )select "([^\"]*)" as the date$/ do |date|
-  date = Chronic.parse(date)
+  date = parsed_time(date)
   prefix = "date"
  
   select date.year.to_s, :from => "#{prefix}_#{dt_suffix[:year]}"
@@ -8,7 +8,7 @@ When /^(?:|I )select "([^\"]*)" as the date$/ do |date|
 end
  
 When /^(?:|I )select "([^\"]*)" as the "([^\"]*)" date$/ do |date, prefix|
-  date = Date.parse(date)
+  date = parsed_time(date)
  
   select date.year.to_s, :from => "#{prefix}_#{dt_suffix[:year]}"
   select date.strftime('%B'), :from => "#{prefix}_#{dt_suffix[:month]}"
@@ -16,7 +16,7 @@ When /^(?:|I )select "([^\"]*)" as the "([^\"]*)" date$/ do |date, prefix|
 end
  
 When /^(?:|I )select "([^\"]*)" as the date and time$/ do |date|
-  date = Date.parse(date)
+  date = parsed_time(date)
   prefix = "date"
  
   select date.year.to_s, :from => "#{prefix}_#{dt_suffix[:year]}"
@@ -27,7 +27,7 @@ When /^(?:|I )select "([^\"]*)" as the date and time$/ do |date|
 end
  
 When /^(?:|I )select "([^\"]*)" as the "([^\"]*)" date and time$/ do |date, prefix|
-  date = Chronic.parse(date)
+  date = parsed_time(date)
  
   select date.year.to_s, :from => "#{prefix}_#{dt_suffix[:year]}"
   select date.strftime('%B'), :from => "#{prefix}_#{dt_suffix[:month]}"
@@ -35,14 +35,6 @@ When /^(?:|I )select "([^\"]*)" as the "([^\"]*)" date and time$/ do |date, pref
   select date.hour.to_s, :from => "#{prefix}_#{dt_suffix[:hour]}"
   select date.min.to_s, :from => "#{prefix}_#{dt_suffix[:minute]}"
 end
- 
-def dt_suffix
-   {
-    :year   => '1i',
-    :month  => '2i',
-    :day    => '3i',
-    :hour   => '4i',
-    :minute => '5i'
-  }
-end
+
+
 

@@ -1,4 +1,3 @@
-@wip
 Feature: Register using Twitter
   In order to compete with my friends as quickly as possible without remembering another password
   As a WGTC user
