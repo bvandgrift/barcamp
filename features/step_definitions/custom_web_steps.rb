@@ -8,7 +8,7 @@ When /^(?:|I )select "([^\"]*)" as the date$/ do |date|
 end
  
 When /^(?:|I )select "([^\"]*)" as the "([^\"]*)" date$/ do |date, prefix|
-  date = Chronic.parse(date)
+  date = Date.parse(date)
  
   select date.year.to_s, :from => "#{prefix}_#{dt_suffix[:year]}"
   select date.strftime('%B'), :from => "#{prefix}_#{dt_suffix[:month]}"
@@ -16,7 +16,7 @@ When /^(?:|I )select "([^\"]*)" as the "([^\"]*)" date$/ do |date, prefix|
 end
  
 When /^(?:|I )select "([^\"]*)" as the date and time$/ do |date|
-  date = Chronic.parse(date)
+  date = Date.parse(date)
   prefix = "date"
  
   select date.year.to_s, :from => "#{prefix}_#{dt_suffix[:year]}"
