@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315124556) do
+ActiveRecord::Schema.define(:version => 20110320194300) do
 
   create_table "acceptances", :force => true do |t|
     t.integer  "talk_id",    :null => false
@@ -68,11 +68,13 @@ ActiveRecord::Schema.define(:version => 20110315124556) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
+    t.string   "email",                              :null => false
+    t.string   "encrypted_password",                 :null => false
+    t.string   "password_salt",                      :null => false
+    t.string   "reset_password_token", :limit => 20
+    t.string   "remember_token",       :limit => 20
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
