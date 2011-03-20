@@ -41,6 +41,6 @@ Given /^these talks have been scheduled for "([^\"]*)":$/ do |barcamp_name, tabl
     And    "I select #{hash['room'].inspect} from \"acceptance[room_id]\""
     And    'I press "Accept"'
   end
-  And 'I follow "logout"'  
+  And 'I follow "Logout"'  
   
 end

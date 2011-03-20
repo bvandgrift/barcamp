@@ -32,7 +32,7 @@ Feature: Admin end to end
     | Inside the BarCamp scheduling application | @bigfleet | #barcampapp |
     | iPad stuff | @christopherbeck | #ipadclt |
     | Your business and the iPhone | @scottned | #iphoneclt |
-    And I follow "logout"        
+    And I follow "Logout"        
 
 Scenario: Talk scheduling success
   Given I am signed up as "jim@me.com"
