@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20110315124556) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "oauth_provider"
+    t.string   "handle"
+    t.string   "avatar_url"
   end
 
 end
